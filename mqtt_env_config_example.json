@@ -1,0 +1,8 @@
+[
+    {
+        "WB_MQTT_HOST": "tcp://host:port",
+        "NAME": "DEVICE1",
+        "TARGET": "POWER",
+        "CHANNEL": "/devices/wb-mr3_example/controls/K2/on"
+    }
+]

@@ -1,8 +1,3 @@
-# Container image that runs your code
-FROM alpine:3.15.0
-
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
-
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+#build stage
+FROM ubuntu:21.10
+RUN apt update -y && apt install mosquitto mosquitto-clients golang -y

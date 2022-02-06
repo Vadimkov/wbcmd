@@ -260,6 +260,22 @@ func TestGetDeviceForCommand(t *testing.T) {
 	}
 }
 
+func TestExecuteCommandWithoutChecking(t *testing.T) {
+	device1 := Device{"tcp://localhost:1883", "d1", "power", "K1"}
+	device2 := Device{"tcp://localhost:1883", "d1", "boot_mode", "K2"}
+	device3 := Device{"tcp://localhost:1883", "d2", "boot_mode", "K2"}
+	devices := []Device{device1, device2, device3}
+
+	{
+		command := Command{"boot_mode", "down", "d1"}
+
+		err := execute_command(command, devices)
+		if err != nil {
+			t.Error("Error is not expecte: " + err.Error())
+		}
+	}
+}
+
 func remove_element_from_list(s []Device, i int) []Device {
 	s[i] = s[len(s)-1]
 	return s[:len(s)-1]

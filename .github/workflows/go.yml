@@ -9,7 +9,7 @@ on:
 jobs:
 
   build:
-    runs-on: innokentyvyz/wbcmd-tests-runner
+    runs-on: innokentyvyz/wbcmd-tests-runner:latest
     steps:
     - uses: actions/checkout@v2
 

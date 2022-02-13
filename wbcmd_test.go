@@ -261,9 +261,9 @@ func TestGetDeviceForCommand(t *testing.T) {
 }
 
 func TestExecuteCommandWithoutChecking(t *testing.T) {
-	device1 := Device{"tcp://mosquitto:1883", "d1", "power", "K1"}
-	device2 := Device{"tcp://mosquitto:1883", "d1", "boot_mode", "K2"}
-	device3 := Device{"tcp://mosquitto:1883", "d2", "boot_mode", "K2"}
+	device1 := Device{"tcp://127.0.0.1:1883", "d1", "power", "K1"}
+	device2 := Device{"tcp://127.0.0.1:1883", "d1", "boot_mode", "K2"}
+	device3 := Device{"tcp://127.0.0.1:1883", "d2", "boot_mode", "K2"}
 	devices := []Device{device1, device2, device3}
 
 	{

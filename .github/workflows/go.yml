@@ -18,9 +18,12 @@ jobs:
       with:
         go-version: 1.17
 
-    - name: Mosquitto MQTT Broker in GitHub Actions
-      uses: Namoshek/mosquitto-github-action@v1
-
+#    - name: Mosquitto MQTT Broker in GitHub Actions
+#      uses: Namoshek/mosquitto-github-action@v1
+    
+    - name: Install mosquitto
+      run: apt install mosquitto -y
+    
     - name: Build
       run: go build -v ./...
 

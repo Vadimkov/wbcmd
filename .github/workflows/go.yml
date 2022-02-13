@@ -9,7 +9,7 @@ on:
 jobs:
 
   build:
-    runs-on: innokentyvyz/wbcmd-tests-runner:latest
+    runs-on: ubuntu:21.10
     steps:
     - uses: actions/checkout@v2
 
@@ -17,6 +17,9 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.17
+
+    - name: Mosquitto MQTT Broker in GitHub Actions
+      uses: Namoshek/mosquitto-github-action@v1
 
     - name: Build
       run: go build -v ./...

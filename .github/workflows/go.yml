@@ -22,7 +22,7 @@ jobs:
 #      uses: Namoshek/mosquitto-github-action@v1
     
     - name: Install mosquitto
-      run: apt install mosquitto -y
+      run: sudo apt install mosquitto -y
     
     - name: Build
       run: go build -v ./...
